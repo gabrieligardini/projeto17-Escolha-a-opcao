@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+}
+
+html,
+body {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.title {
+    background-color: #0069d9;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+.title span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #f9f9ff;
+}
+
+.options input[type="radio"] {
+    display: none;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border: 2px solid #0069d9;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0069d9;
+    background: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.options label::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0069d9;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 15px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.options label::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #0069d9;
+    transition: all 0.3s ease;
+    top: 50%;
+    left: 26px;
+    transform: translateY(-50%) scale(0);
+}
+
+.options input[type="radio"]:checked+label {
+    background: #fff;
+    color: #0069d9;
+    border-color: #0069d9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.options input[type="radio"]:checked+label::after {
+    transform: translateY(-50%) scale(1);
+}
